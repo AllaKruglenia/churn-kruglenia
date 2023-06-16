@@ -102,8 +102,8 @@ def main():
                <h2 style="color:green ;text-align:center;"> Хорошая новость, клиент остаётся в банке! </h2>
                </div>
             """
-    if int(Age)-int(Tenure)<18: 
-        st.error('Внимание проверьте данные возраст и срок обслуживания')
+    # if int(Age)-int(Tenure)<18: 
+    #     st.error('Внимание проверьте данные возраст и срок обслуживания')
  
     
     if st.button('Сделать прогноз'):
@@ -144,8 +144,8 @@ def main():
         # if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
         #     st.success('Вероятность оттока составляет менее 10%.')
         #     st.markdown(churn_html, unsafe_allow_html= True)
-        if Age - Tenure < 17:
-            st.error('Некорректный возраст клиента или длительность обслуживания в банке')
+        if int(Age)-int(Tenure)<18: 
+            st.error('Внимание проверьте данные возраст и срок обслуживания')
             
         
         elif Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
