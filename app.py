@@ -116,13 +116,10 @@ def main():
 
 if __name__=='__main__':
     main()
-st.title('Предсказание на основе модели')
-st.text('Введите данные для предсказания')
+
 st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
 st.sidebar.title('Проект "Отток клиентов"')
-st.write("""
-Эта модель предсказывает уйдет клиент банка или останется!
-""")
+
 
 st.sidebar.info('Курс Diving into Darkness of Data Science.')
 st.sidebar.info('Подготовила проект Кругленя А.М.')
