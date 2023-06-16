@@ -38,6 +38,11 @@ def user_input_features():
     return features
 input = user_input_features()
 
+def predict_churn(CreditScore, Age, Balance, NumOfProducts, EstimatedSalary):
+    input = np.array([[CreditScore, Age, Balance, NumOfProducts, EstimatedSalary]]).astype(np.float64)
+    if option == 'XGBoost':
+        prediction = model.predict_proba(input)
+        pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
 if st.button("Предсказать отток клиентов"):
     if input:
