@@ -105,12 +105,11 @@ def main():
     if int(Age)-int(Tenure)<18: 
         st.error('Внимание проверьте данные возраст и срок обслуживания')
         
-    if int(Age)<=22 and float(Balance)<=2000.00 and NumOfProducts<=2 and HasCrCard='0' and IsActiveMember='0':
        
     
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        if int(Age)<=22 and float(Balance)<=2000.00 and NumOfProducts<=2 and HasCrCard='0' and IsActiveMember='0':
+        if Age<=22 and Balance<=2000.00 and NumOfProducts<=2 and HasCrCard=='0' and IsActiveMember=='0':
             output<0.5
             
             
