@@ -104,7 +104,23 @@ def main():
             """
     if int(Age)-int(Tenure)<18: 
         st.error('Внимание проверьте данные возраст и срок обслуживания')
-        
+ 
+    
+    if st.button('Сделать прогноз'):
+        output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+        #if Age<22 and Balance<2000.00 and NumOfProducts==1 and HasCrCard==0 and IsActiveMember==0:
+        #    output<0.5
+            
+            
+        # st.success('Вероятность оттока составляет {}'.format(output))
+
+
+        # if output >= 0.5:
+        #     st.markdown(churn_html, unsafe_allow_html= True)
+
+        # else:
+        #     st.markdown(no_churn_html, unsafe_allow_html= True)
+       
     if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
         st.success('Вероятность оттока составляет более 70%.')
         st.markdown(churn_html, unsafe_allow_html= True)
@@ -128,21 +144,6 @@ def main():
     if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
         st.success('Вероятность оттока составляет менее 10%.')
         st.markdown(churn_html, unsafe_allow_html= True)
-    
-    if st.button('Сделать прогноз'):
-        output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        #if Age<22 and Balance<2000.00 and NumOfProducts==1 and HasCrCard==0 and IsActiveMember==0:
-        #    output<0.5
-            
-            
-        # st.success('Вероятность оттока составляет {}'.format(output))
-
-
-        # if output >= 0.5:
-        #     st.markdown(churn_html, unsafe_allow_html= True)
-
-        # else:
-        #     st.markdown(no_churn_html, unsafe_allow_html= True)
 
 if __name__=='__main__':
     main()
