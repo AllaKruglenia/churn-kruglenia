@@ -43,6 +43,11 @@ def predict_churn(CreditScore, Age, Balance, NumOfProducts, EstimatedSalary):
     if option == 'XGBoost':
         prediction = model.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+    else:
+        pred=0.30
+        #st.markdown('Наверное, клиент останется в банке, но это не точно да и вообще надо звонить в Битву экстрасенсов.')
+
+    return float(pred)        
 
 if st.button("Предсказать отток клиентов"):
     if input:
