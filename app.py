@@ -36,25 +36,25 @@ def main():
 
 CreditScore = st.slider('Скоринговый балл', 300, 900)
 
-    Geography = st.selectbox('География/регион', ['France', 'Germany', 'Spain'])
-    Geo = int(le1_pik.transform([Geography]))
+Geography = st.selectbox('География/регион', ['France', 'Germany', 'Spain'])
+Geo = int(le1_pik.transform([Geography]))
 
-    Gender = st.selectbox('Пол', ['Male', 'Female'])
-    Gen = int(le_pik.transform([Gender]))
+Gender = st.selectbox('Пол', ['Male', 'Female'])
+Gen = int(le_pik.transform([Gender]))
 
-    Age = st.slider("Возраст", 10, 95)
+Age = st.slider("Возраст", 10, 95)
 
-    Tenure = st.selectbox("Стаж", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
+Tenure = st.selectbox("Стаж", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
 
-    Balance = st.slider("Баланс", 0.00, 250000.00)
+Balance = st.slider("Баланс", 0.00, 250000.00)
 
-    NumOfProducts = st.selectbox('Количество продуктов', ['1', '2', '3', '4'])
+NumOfProducts = st.selectbox('Количество продуктов', ['1', '2', '3', '4'])
 
-    HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
+HasCrCard = st.selectbox("Есть кредитная БПК ?", ['0', '1'])
 
-    IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
+IsActiveMember = st.selectbox("Активный клиент ?", ['0', '1'])
 
-    EstimatedSalary = st.slider("Зарплата", 0.00, 200000.00)
+EstimatedSalary = st.slider("Зарплата", 0.00, 200000.00)
 
 
 def predict_churn(CreditScore, Age, Balance, NumOfProducts, EstimatedSalary):
