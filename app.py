@@ -18,11 +18,11 @@ def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = '''
     <style>
-    body {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
-    }
-    </style>
+    .stApp {
+     background-image: url("data:image/png;base64,%s");
+     background-size: cover;
+     }
+     </style>
     ''' % bin_str
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -30,8 +30,8 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('ottok_klientov.jpg')
 
 
-classifier_name=['XGBoost', 'Гадание на кофейной гуще']
-option = st.sidebar.selectbox('Евгений Викторович, какой алгоритм запустить?', classifier_name)
+classifier_name=['Random Forest']
+option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
 
 
