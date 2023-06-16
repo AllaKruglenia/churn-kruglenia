@@ -135,7 +135,7 @@ def main():
         #    output<0.5
             
             
-        st.success('Вероятность оттока составляет {}'.format(output))
+        # st.success('Вероятность оттока составляет {}'.format(output))
 
 
         # if output >= 0.5:
