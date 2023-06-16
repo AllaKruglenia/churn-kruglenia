@@ -45,5 +45,5 @@ if st.button("Предсказать отток клиентов"):
         
       
 
-st.sidebar.info('Учебный проект. Курс Diving into Darkness of Data Science.' ИТ АКАДЕМИЯ ПРИОРБАНК 2023. Подготовила проект Кругленя А.М.')
+st.sidebar.info('Учебный проект. Курс Diving into Darkness of Data Science.')
 st.sidebar.markdown('ИТ АКАДЕМИЯ ПРИОРБАНК 2023. Подготовила проект Кругленя А.М.')
