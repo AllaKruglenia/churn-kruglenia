@@ -105,7 +105,7 @@ def main():
     if int(Age)-int(Tenure)<18: 
         st.error('Внимание проверьте данные возраст и срок обслуживания')
         
-    if CreditScore<100 and Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure == 0:
+    if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
         st.success('Вероятность оттока составляет более 70%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
