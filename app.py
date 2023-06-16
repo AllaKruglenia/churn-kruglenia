@@ -121,29 +121,52 @@ def main():
         # else:
         #     st.markdown(no_churn_html, unsafe_allow_html= True)
        
-        if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
-            st.success('Вероятность оттока составляет более 70%.')
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
+        #     st.success('Вероятность оттока составляет более 70%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
 
-        if CreditScore < 200 and Balance < 10000 and EstimatedSalary < 10000 and IsActiveMember == 0 and Age > 70 and Tenure == 1:
-            st.success('Вероятность оттока составляет более 60%.')
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if CreditScore < 200 and Balance < 10000 and EstimatedSalary < 10000 and IsActiveMember == 0 and Age > 70 and Tenure == 1:
+        #     st.success('Вероятность оттока составляет более 60%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
 
-        if CreditScore < 300 and Balance < 15000 and EstimatedSalary < 15000 and IsActiveMember == 0 and Age > 60 and Tenure == 2:
-            st.success('Вероятность оттока составляет более 50%.')
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if CreditScore < 300 and Balance < 15000 and EstimatedSalary < 15000 and IsActiveMember == 0 and Age > 60 and Tenure == 2:
+        #     st.success('Вероятность оттока составляет более 50%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
 
-        if CreditScore > 100 and EstimatedSalary > 5000 and IsActiveMember == 1 and NumOfProducts > 1 and Age < 60 and Tenure > 3 and Balance > 5000:
-            st.success('Вероятность оттока составляет менее 30%.')
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if CreditScore > 100 and EstimatedSalary > 5000 and IsActiveMember == 1 and NumOfProducts > 1 and Age < 60 and Tenure > 3 and Balance > 5000:
+        #     st.success('Вероятность оттока составляет менее 30%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
   
-        if CreditScore > 200 and EstimatedSalary > 10000 and IsActiveMember == 1 and NumOfProducts > 2 and Age < 50 and Tenure > 4 and Balance > 10000:
-            st.success('Вероятность оттока составляет менее 20%.')
+        # if CreditScore > 200 and EstimatedSalary > 10000 and IsActiveMember == 1 and NumOfProducts > 2 and Age < 50 and Tenure > 4 and Balance > 10000:
+        #     st.success('Вероятность оттока составляет менее 20%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
+
+        # if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
+        #     st.success('Вероятность оттока составляет менее 10%.')
+        #     st.markdown(churn_html, unsafe_allow_html= True)
+        if Age - Tenure < 17:
+            st.error('Некорректный возраст клиента или длительность обслуживания в банке')
+            
+        
+        elif Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
+            st.success('Вероятность оттока составляет более 90%.')
             st.markdown(churn_html, unsafe_allow_html= True)
 
-        if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
-            st.success('Вероятность оттока составляет менее 10%.')
-            st.markdown(churn_html, unsafe_allow_html= True)
+        elif Balance > 2000 and EstimatedSalary > 2000 and CreditScore > 250 and predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)  > 40:
+            st.success('Вероятность оттока составляет менее 40 %.')
+            st.markdown(no_churn_html, unsafe_allow_html= True)
+                
+        else:
+            output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+            st.success('Вероятность оттока составляет {:.2f} %'.format(output))
+            if output >= 85:
+                st.markdown(churn_html, unsafe_allow_html= True)
+            elif output >= 40:
+                st.markdown(mb_churn_html, unsafe_allow_html= True)
+            else:
+                st.markdown(no_churn_html, unsafe_allow_html= True)
+
+        
 
 if __name__=='__main__':
     main()
