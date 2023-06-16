@@ -17,6 +17,7 @@ def load_model():
 
     model = load_model()
 
+st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
 st.sidebar.title('Проект "Отток клиентов"')
 st.write("""
 Эта модель предсказывает уйдет клиент банка или останется!
@@ -46,4 +47,4 @@ if st.button("Предсказать отток клиентов"):
       
 
 st.sidebar.info('Курс Diving into Darkness of Data Science.')
-st.sidebar.info('ИТ-АКАДЕМИЯ ПРИОРБАНК. 2023 год. Подготовила проект Кругленя А.М.')
+st.sidebar.info('Подготовила проект Кругленя А.М.')
