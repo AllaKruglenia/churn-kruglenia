@@ -102,7 +102,7 @@ def main():
                <h2 style="color:green ;text-align:center;"> Хорошая новость, клиент остаётся в банке! </h2>
                </div>
             """
-if  int('Age') - int('Tenure') >= 18: 
+if int(Age)- int(Tenure)< 17: 
     print('Внимание проверьте данные возраст и срок обслуживания')
 
     
