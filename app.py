@@ -97,11 +97,11 @@ def main():
         # st.success('Вероятность оттока составляет {}'.format(output))
 
 
-        # if output >= 0.5:
-        #     st.markdown(churn_html, unsafe_allow_html= True)
+        if output >= 0.5:
+            st.markdown(churn_html, unsafe_allow_html= True)
 
-        # else:
-        #     st.markdown(no_churn_html, unsafe_allow_html= True)
+        else:
+            st.markdown(no_churn_html, unsafe_allow_html= True)
        
         # if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
         #     st.success('Вероятность оттока составляет более 70%.')
