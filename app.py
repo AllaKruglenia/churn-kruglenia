@@ -99,11 +99,11 @@ def main():
         st.success('Вероятность оттока составляет {}'.format(output))
 
 
-        if output >= 0.5:
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if output >= 0.5:
+        #     st.markdown(churn_html, unsafe_allow_html= True)
 
-        else:
-            st.markdown(no_churn_html, unsafe_allow_html= True)
+        # else:
+        #     st.markdown(no_churn_html, unsafe_allow_html= True)
 
         if int(Age)-int(Tenure)<18: 
             st.error('Внимание проверьте данные возраст и срок обслуживания')
