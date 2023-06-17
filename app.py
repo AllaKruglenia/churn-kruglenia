@@ -46,7 +46,7 @@ le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
     if option == 'Random Forest':
-        prediction = model.predict_proba(input)
+        prediction = model_1.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
     return float(pred)
@@ -60,32 +60,17 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-
-
-
-
-
-
     CreditScore = st.slider('Скоринговый балл', 300, 900)
-
     Geography = st.selectbox('Страна', ['France', 'Germany', 'Spain'])
     Geo = int(le1_pik.transform([Geography]))
-
     Gender = st.selectbox('Пол', ['Male', 'Female'])
     Gen = int(le_pik.transform([Gender]))
-
     Age = st.slider("Возраст", 18, 95)
-
     Tenure = st.selectbox("Срок обслуживания", ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','10', '11', '12', '13', '14', '15'])
-
     Balance = st.slider("Баланс", 0.00, 250000.00)
-
     NumOfProducts = st.selectbox('Количество продуктов', ['1', '2', '3', '4'])
-
     HasCrCard = st.selectbox("Наличие кредитной БПК", ['0', '1'])
-
     IsActiveMember = st.selectbox("Является ли активным клиентом?", ['0', '1'])
-
     EstimatedSalary = st.slider("Зарплата", 0.00, 200000.00)
 
     churn_html = """  
