@@ -43,14 +43,14 @@ le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 
 def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
-    input = np.array([[CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]]).astype(np.float64)
+    input = np.array([[Balance,  EstimatedSalary]]).astype(np.float64)
     if option == 'RandomForest':
         prediction = mode_1.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
     else:
         pred=0.30
-        #st.markdown('Наверное, клиент останется в банке, но это не точно да и вообще надо звонить в Битву экстрасенсов.')
+        #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
 
     return float(pred)
 
@@ -63,14 +63,6 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-
-
-
-
-
-    st.sidebar.subheader("Приложение создано для курса Diving into Darkness of Data Science")
-    st.sidebar.text("Разработчик - Братковский Е.В.")
-
 
     CreditScore = st.slider('Скоринговый балл', 300, 900)
 
