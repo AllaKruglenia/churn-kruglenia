@@ -40,17 +40,17 @@ le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 
-def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
-    input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
-    if option == 'XGBoost':
-        prediction = model.predict_proba(input)
-        pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+# def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
+#     input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
+#     if option == 'XGBoost':
+#         prediction = model.predict_proba(input)
+#         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
-    else:
-        pred=0.30
-        #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
+#     else:
+#         pred=0.30
+#         #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
 
-    return float(pred)
+#     return float(pred)
 
 
 def main():
@@ -97,11 +97,11 @@ def main():
         # st.success('Вероятность оттока составляет {}'.format(output))
 
 
-        if output >= 0.5:
-            st.markdown(churn_html, unsafe_allow_html= True)
+        # if output >= 0.5:
+        #     st.markdown(churn_html, unsafe_allow_html= True)
 
-        else:
-            st.markdown(no_churn_html, unsafe_allow_html= True)
+        # else:
+        #     st.markdown(no_churn_html, unsafe_allow_html= True)
        
         # if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
         #     st.success('Вероятность оттока составляет более 70%.')
@@ -126,6 +126,7 @@ def main():
         # if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
         #     st.success('Вероятность оттока составляет менее 10%.')
         #     st.markdown(churn_html, unsafe_allow_html= True)
+        
         if int(Age)-int(Tenure)<18: 
             st.error('Внимание проверьте данные возраст и срок обслуживания')
             
