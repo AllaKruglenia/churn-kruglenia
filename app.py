@@ -30,7 +30,7 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('ottok_klientov.jpg')
 
 
-classifier_name=['Random Forest', ]
+classifier_name=['Random Forest']
 option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
 
@@ -48,10 +48,6 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
     if option == 'Random Forest':
         prediction = model.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
-
-    else:
-        pred=0.30
-        #st.markdown('Наверное, клиент останется в банке, но это не точно да и вообще надо звонить в Битву экстрасенсов.')
 
     return float(pred)
 
