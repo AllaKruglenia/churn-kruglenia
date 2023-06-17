@@ -43,11 +43,11 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
     input = np.array([[Balance,  EstimatedSalary]]).astype(np.float64)
     if option == 'RandomForest':
         prediction = model.predict(input)
-        pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+        pred='{0:.{1}f}'.format(prediction[0][0], 2)
 
-    # else:
-    #     pred=0.50
-    #     st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
+    else:
+        pred=0.50
+        st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
     
     return float(pred)
 
@@ -121,9 +121,9 @@ def main():
         else:
             output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
             st.success('Вероятность оттока составляет {0:.2f}'.format(output))
-            if output >= 85:
+            if output >=85:
                 st.markdown(churn_html, unsafe_allow_html= True)
-            elif output >= 40:
+            elif output >=40:
                 st.markdown(mb_churn_html, unsafe_allow_html= True)
             else:
                 st.markdown(no_churn_html, unsafe_allow_html= True)
