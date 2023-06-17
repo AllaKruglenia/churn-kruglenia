@@ -40,17 +40,17 @@ le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 
-def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
-    input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
-    if option == 'XGBoost':
-        prediction = model.predict_proba(input)
-        pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+# def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
+#     input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
+#     if option == 'XGBoost':
+#         prediction = model.predict_proba(input)
+#         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
-    else:
-        pred=0.30
-        #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
+#     else:
+#         pred=0.30
+#         #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
 
-    return float(pred)
+#     return float(pred)
 
 
 def main():
