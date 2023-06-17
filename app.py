@@ -1,6 +1,6 @@
 import sklearn
 
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
 import streamlit as st
@@ -49,8 +49,8 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
     else:
-        prediction = model2.predict_proba(input)
-        pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+        # prediction = model2.predict_proba(input)
+        # pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
     return float(pred)
 
