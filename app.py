@@ -89,11 +89,11 @@ def main():
     
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        #if Age<22 and Balance<2000.00 and NumOfProducts==1 and HasCrCard==0 and IsActiveMember==0:
-        #    output<0.5
+        # if Age<22 and Balance<2000.00 and NumOfProducts==1 and HasCrCard==0 and IsActiveMember==0:
+           output<0.5
             
             
-        # st.success('Вероятность оттока составляет {}'.format(output))
+        st.success('Вероятность оттока составляет {}'.format(output))
 
 
         # if output >= 0.5:
