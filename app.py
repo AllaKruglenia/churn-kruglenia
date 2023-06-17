@@ -36,16 +36,16 @@ st.subheader(option)
 
 
 #Importing model and label encoders
-model=pickle.load(open("final_xg_model.pkl","rb"))
-#model_1 = pickle.load(open("final_rf_model.pkl","rb"))
+# model=pickle.load(open("final_xg_model.pkl","rb"))
+model_1 = pickle.load(open("final_rf_model.pkl","rb"))
 le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 
 def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]]).astype(np.float64)
-    if option == 'XGBoost':
-        prediction = model.predict_proba(input)
+    if option == 'RandomForest':
+        prediction = mode_1.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
     else:
