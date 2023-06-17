@@ -132,8 +132,8 @@ def main():
         #     st.success('Вероятность оттока составляет менее 10%.')
         #     st.markdown(churn_html, unsafe_allow_html= True)
         
-        # if int(Age)-int(Tenure)<18: 
-        #     st.error('Внимание проверьте данные возраст и срок обслуживания')
+        if int(Age)-int(Tenure)<18: 
+            st.error('Внимание проверьте данные возраст и срок обслуживания')
             
         
         elif Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
