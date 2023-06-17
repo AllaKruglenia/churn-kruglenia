@@ -8,7 +8,7 @@ import pickle
 import numpy as np
 
 import base64
-@st.cache(allow_output_mutation=True)
+st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
