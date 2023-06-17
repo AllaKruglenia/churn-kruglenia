@@ -45,11 +45,12 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
     if option == 'XGBoost':
         prediction = model.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+        return float(pred)    
     # else:
         # pred=0.50
         # #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
 
-    return float(pred)
+
 
 
 def main():
