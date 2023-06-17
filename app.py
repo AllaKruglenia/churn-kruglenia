@@ -34,10 +34,8 @@ classifier_name=['Random Forest']
 option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
 
-
-
 #Importing model and label encoders
-# model=pickle.load(open("model.pkl","rb"))
+model=pickle.load(open("model.pkl","rb"))
 model = pickle.load(open("final_xg_model.pkl","rb"))
 le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
