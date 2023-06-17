@@ -147,7 +147,7 @@ def main():
                 
         else:
             output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-            st.success('Вероятность оттока составляет {:.2f}'.format(output))
+            st.success('Вероятность оттока составляет {:.2f}.format(output))
             if output >= 85:
                 st.markdown(churn_html, unsafe_allow_html= True)
             elif output >= 40:
