@@ -38,6 +38,7 @@ st.subheader(option)
 #Importing model and label encoders
 # model=pickle.load(open("final_xg_model.pkl","rb"))
 model_1 = pickle.load(open("final_rf_model.pkl","rb"))
+model_2 = pickle.load(open("final_gbm_model.pkl","rb"))
 le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
