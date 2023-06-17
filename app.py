@@ -29,7 +29,7 @@ def set_png_as_page_bg(png_file):
     return
 set_png_as_page_bg('ottok_klientov.jpg')
 
-classifier_name=['Random Forest']
+classifier_name=['Random Forest', 'GradientBoosting']
 option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
 
