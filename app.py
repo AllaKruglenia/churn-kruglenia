@@ -2,6 +2,7 @@ import sklearn
 
 #from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+from lightgbm import LGBMClassifier
 
 import streamlit as st
 import pickle
@@ -30,7 +31,7 @@ def set_png_as_page_bg(png_file):
 set_png_as_page_bg('ottok_klientov.jpg')
 
 
-classifier_name=['Random Forest']
+classifier_name=['Random Forest', ]
 option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
 
@@ -45,7 +46,7 @@ le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
     input = np.array([[Balance, EstimatedSalary]]).astype(np.float64)
-    if option == 'XGBoost':
+    if option == 'Random Forest':
         prediction = model.predict_proba(input)
         pred = '{0:.{1}f}'.format(prediction[0][0], 2)
 
