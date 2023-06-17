@@ -2,7 +2,6 @@ import sklearn
 
 #from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
-from lightgbm import LGBMClassifier
 
 import streamlit as st
 import pickle
