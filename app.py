@@ -29,7 +29,6 @@ def set_png_as_page_bg(png_file):
     return
 set_png_as_page_bg('ottok_klientov.jpg')
 
-
 classifier_name=['Random Forest']
 option = st.sidebar.selectbox('Алгоритм', classifier_name)
 st.subheader(option)
@@ -49,7 +48,7 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 
     else:
         pred=0.30
-        #st.markdown('Наверное, клиент останется в банке, но это не точно да и вообще надо звонить в Битву экстрасенсов.')
+        #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
 
     return float(pred)
 
