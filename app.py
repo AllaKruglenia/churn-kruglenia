@@ -47,7 +47,7 @@ def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, Ha
 
     else:
         pred=0.80
-        #st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
+        st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
     
     return float(pred)
 
