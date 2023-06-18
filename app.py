@@ -92,7 +92,7 @@ if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenu
     st.success('Вероятность оттока составляет более 70%.')
     st.markdown(churn_html, unsafe_allow_html= True)
 
-if CreditScore < 200 and Balance < 10000 and EstimatedSalary < 10000 and IsActiveMember == 0 and Age > 70 and Tenure == 1:
+if CreditScore < 200 and Balance <10000 and EstimatedSalary <10000 and IsActiveMember == 0 and Age> 70 and Tenure == 1:
     st.success('Вероятность оттока составляет более 60%.')
     st.markdown(churn_html, unsafe_allow_html= True)
 
