@@ -1,7 +1,7 @@
 import sklearn
 
-from sklearn.ensemble import RandomForestClassifier
-# from sklearn.ensemble import GradientBoostingClassifier
+# from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 
 import streamlit as st
 import pickle
