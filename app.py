@@ -155,9 +155,9 @@ def main():
 
 # if __name__=='__main__':
 #     main()
-st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
-st.sidebar.title('Проект "Отток клиентов"')
+    st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
+    st.sidebar.title('Проект "Отток клиентов"')
 
 
-st.sidebar.info('Курс Diving into Darkness of Data Science.')
-st.sidebar.info('Подготовила проект Кругленя А.М.')    
+    st.sidebar.info('Курс Diving into Darkness of Data Science.')
+    st.sidebar.info('Подготовила проект Кругленя А.М.')    
