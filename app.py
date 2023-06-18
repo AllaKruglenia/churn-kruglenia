@@ -8,7 +8,7 @@ import pickle
 import numpy as np
 
 import base64
-st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -90,7 +90,7 @@ def main():
 
     if st.button('Сделать прогноз'):
         output = predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-        st.success('Вероятность оттока составляет {}'.format(output))
+        # st.success('Вероятность оттока составляет {}'.format(output))
 
 
         if output>0.5:
