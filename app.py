@@ -130,7 +130,7 @@ def main():
         #     st.error('Внимание проверьте данные возраст и срок обслуживания')
             
         
-    if Balance < 1000.00 and EstimatedSalary < 500.00 and IsActiveMember == 0 and NumOfProducts == 1:
+    if Balance <1000.00 and EstimatedSalary <500.00 and IsActiveMember == 0 and NumOfProducts == 1:
         st.success('Вероятность оттока составляет более 90%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
