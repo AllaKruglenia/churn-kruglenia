@@ -16,12 +16,6 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
-st.sidebar.title('Проект "Отток клиентов"')
-
-st.sidebar.info('Курс Diving into Darkness of Data Science.')
-st.sidebar.info('Подготовила проект Кругленя А.М.') 
-
 def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = '''
@@ -164,6 +158,10 @@ def main():
     if __name__=='__main__':
         main()
 
+st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
+st.sidebar.title('Проект "Отток клиентов"')
 
+st.sidebar.markdown('Курс Diving into Darkness of Data Science.')
+st.sidebar.markdown('Подготовила проект Кругленя А.М.') 
 
 
