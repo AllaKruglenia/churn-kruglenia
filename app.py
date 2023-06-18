@@ -160,4 +160,7 @@ def main():
 
 
     # st.sidebar.info('Курс Diving into Darkness of Data Science.')
-    # st.sidebar.info('Подготовила проект Кругленя А.М.')    
+    # st.sidebar.info('Подготовила проект Кругленя А.М.') 
+
+    if st.button('Click here') is True:
+       st.write('Great')
