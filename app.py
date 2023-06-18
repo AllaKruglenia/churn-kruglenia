@@ -85,8 +85,8 @@ def main():
                <h2 style="color:green ;text-align:center;"> Хорошая новость, клиент остаётся в банке! </h2>
                </div>
             """
-if int('Age')-int('Tenure')<18: 
-        st.error('Внимание проверьте данные возраст и срок обслуживания')
+# if int('Age')-int('Tenure')<18: 
+#         st.error('Внимание проверьте данные возраст и срок обслуживания')
 
 if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
     st.success('Вероятность оттока составляет более 70%.')
