@@ -93,7 +93,7 @@ def main():
         st.success('Вероятность оттока составляет {}'.format(output))
 
 
-        if output>str(0.5):
+        if output>0.5:
             st.markdown(churn_html, unsafe_allow_html= True)
 
         else:
