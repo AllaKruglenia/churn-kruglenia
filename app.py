@@ -40,17 +40,17 @@ le_pik=pickle.load(open("label_encoding_for_gender.pkl","rb"))
 le1_pik=pickle.load(open("label_encoding_for_geo.pkl","rb"))
 
 
-def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
-    input = np.array([[Balance,  EstimatedSalary]]).astype(np.float64)
-    if option == 'Random Forest':
-        prediction = model.predict_proba(input)
-        pred='{0:.{2}f}'.format(prediction[0][0], 2)
+# def predict_churn(CreditScore, Geo, Gen, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary):
+#     input = np.array([[Balance,  EstimatedSalary]]).astype(np.float64)
+#     if option == 'Random Forest':
+#         prediction = model.predict_proba(input)
+#         pred='{0:.{2}f}'.format(prediction[0][0], 2)
 
-    else:
-        pred=0.30
-        st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
+#     else:
+#         pred=0.30
+#         st.markdown('Клиент может уйти, рекомендуется провести СРМ компанию')
     
-    return float(pred)
+#     return float(pred)
 
 
 def main():
@@ -113,15 +113,15 @@ def main():
             st.success('Вероятность оттока составляет менее 40 %.')
             st.markdown(no_churn_html, unsafe_allow_html= True)
                 
-        else:
-            output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
-            st.success('Вероятность оттока составляет {0:.2f}'.format(output))
-            if output >=85:
-                st.markdown(churn_html, unsafe_allow_html= True)
-            elif output >=40:
-                st.markdown(mb_churn_html, unsafe_allow_html= True)
-            else:
-                st.markdown(no_churn_html, unsafe_allow_html= True)
+        # else:
+        #     output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
+        #     st.success('Вероятность оттока составляет {0:.2f}'.format(output))
+        #     if output >=85:
+        #         st.markdown(churn_html, unsafe_allow_html= True)
+        #     elif output >=40:
+        #         st.markdown(mb_churn_html, unsafe_allow_html= True)
+        #     else:
+        #         st.markdown(no_churn_html, unsafe_allow_html= True)
 
 
 
