@@ -153,8 +153,8 @@ def main():
 
 
 
-if __name__=='__main__':
-    main()
+# if __name__=='__main__':
+#     main()
 st.sidebar.title('ИТ-АКАДЕМИЯ ПРИОРБАНК')
 st.sidebar.title('Проект "Отток клиентов"')
 
