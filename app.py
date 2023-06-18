@@ -130,14 +130,14 @@ if st.button('Сделать прогноз'):
         #     st.error('Внимание проверьте данные возраст и срок обслуживания')
             
         
-if Balance < 1000 and EstimatedSalary < 500 and IsActiveMember == 0 and NumOfProducts == 1:
-    st.success('Вероятность оттока составляет более 90%.')
-    st.markdown(churn_html, unsafe_allow_html= True)
+    if Balance < 1000.00 and EstimatedSalary < 500.00 and IsActiveMember == 0 and NumOfProducts == 1:
+        st.success('Вероятность оттока составляет более 90%.')
+        st.markdown(churn_html, unsafe_allow_html= True)
 
-elif Balance > 2000 and EstimatedSalary > 2000 and CreditScore > 250:
+    elif Balance > 2000.00 and EstimatedSalary > 2000.00 and CreditScore > 250:
             # and predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)  > 40:
-    st.success('Вероятность оттока составляет менее 40 %.')
-    st.markdown(no_churn_html, unsafe_allow_html= True)
+        st.success('Вероятность оттока составляет менее 40 %.')
+        st.markdown(no_churn_html, unsafe_allow_html= True)
                 
         # else:
         #     output = predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)
