@@ -62,7 +62,7 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     CreditScore = st.slider('Скоринговый балл', 300, 900)
-    Geography = st.selectbox('Страна', ['France', 'Germany', 'Spain'])
+    Geography = st.selectbox('Страна', ['Минск', 'Орша', 'Гродно'])
     Geo = int(le1_pik.transform([Geography]))
     Gender = st.selectbox('Пол', ['Male', 'Female'])
     Gen = int(le_pik.transform([Gender]))
