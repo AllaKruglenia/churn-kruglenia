@@ -136,7 +136,7 @@ def main():
 
     elif Balance > 2000.00 and EstimatedSalary > 2000.00 and CreditScore > 250:
             # and predict_churn(CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary)  > 40:
-        st.success('Вероятность оттока составляет менее 40 %.')
+        st.success('Вероятность оттока составляет менее 40%.')
         st.markdown(no_churn_html, unsafe_allow_html= True)
                 
         # else:
