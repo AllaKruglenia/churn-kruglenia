@@ -88,27 +88,27 @@ def main():
     if int(Age)-int(Tenure)<18: 
         st.error('Внимание проверьте данные возраст и срок обслуживания')
 
-    if Balance<200 and EstimatedSalary<100 and IsActiveMember==0 and Age<22 and Tenure==0:
+    if Balance<200.00 and EstimatedSalary<100.00 and IsActiveMember==0 and Age<22 and Tenure==0:
         st.success('Вероятность оттока составляет более 70%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
-    if CreditScore < 200 and Balance <10000 and EstimatedSalary <10000 and IsActiveMember == 0 and Age> 70 and Tenure == 1:
+    if CreditScore < 200 and Balance <10000.00 and EstimatedSalary <10000.00 and IsActiveMember == 0 and Age> 70 and Tenure == 1:
         st.success('Вероятность оттока составляет более 60%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
-    if CreditScore < 300 and Balance < 15000 and EstimatedSalary < 15000 and IsActiveMember == 0 and Age > 60 and Tenure == 2:
+    if CreditScore < 300 and Balance < 15000.00 and EstimatedSalary < 15000.00 and IsActiveMember == 0 and Age > 60 and Tenure == 2:
         st.success('Вероятность оттока составляет более 50%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
-    if CreditScore > 100 and EstimatedSalary > 5000 and IsActiveMember == 1 and NumOfProducts > 1 and Age < 60 and Tenure > 3 and Balance > 5000:
+    if CreditScore > 100 and EstimatedSalary > 5000.00 and IsActiveMember == 1 and NumOfProducts > 1 and Age < 60 and Tenure > 3 and Balance > 5000.00:
         st.success('Вероятность оттока составляет менее 30%.')
         st.markdown(churn_html, unsafe_allow_html= True)
   
-    if CreditScore > 200 and EstimatedSalary > 10000 and IsActiveMember == 1 and NumOfProducts > 2 and Age < 50 and Tenure > 4 and Balance > 10000:
+    if CreditScore > 200 and EstimatedSalary > 10000.00 and IsActiveMember == 1 and NumOfProducts > 2 and Age < 50 and Tenure > 4 and Balance > 10000.00:
         st.success('Вероятность оттока составляет менее 20%.')
         st.markdown(churn_html, unsafe_allow_html= True)
 
-    if CreditScore > 300 and EstimatedSalary > 15000 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000:
+    if CreditScore > 300 and EstimatedSalary > 15000.00 and IsActiveMember == 1 and NumOfProducts > 3 and Age < 40 and Tenure > 5 and Balance > 20000.00:
         st.success('Вероятность оттока составляет менее 10%.')
         st.markdown(churn_html, unsafe_allow_html= True)
         
